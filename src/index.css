@@ -39,6 +39,7 @@ h3 {
 
 }
 
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -68,6 +69,12 @@ button:focus-visible {
   }
   button {
     background-color: #00ba0f;
-    color: white;
+    color: black;
   }
+ 
+}
+
+.botton {
+  background-color: #f7f31f;
+  color: black;
 }

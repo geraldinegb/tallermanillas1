@@ -149,15 +149,16 @@ function Compras() {
 
   return (
     <div className="container mt-5">
-      <h4 className="text-center">Elija y combine su manilla con los materiales que desee</h4>
+      <h5 className="text-center">Elija y combine su manilla con los materiales que desee</h5>
       <hr />
 
-      <div className="container-xs col-4 mb-4">
+      <div className="container-xs ">
         <h5>Tipo de moneda con la que va a cancelar:</h5>
         <select value={moneda} onChange={(e) => setMoneda(e.target.value)} className="form-select">
           <option key="USD" value="USD">Dolar (USD)</option>
           <option key="COP" value="COP">Peso Colombiano</option>
         </select>
+        <br></br>
       </div>
 
       <div className="row">
@@ -173,13 +174,13 @@ function Compras() {
                 </span>
                 <button
                   onClick={() => eliminarProducto(producto.id)}
-                  className="btn btn-danger btn-sm float-end mx-2"
+                  className="botton"
                 >
                   Eliminar
                 </button>
                 <button
                   onClick={() => editar(producto)}
-                  className="btn btn-warning btn-sm float-end"
+                  className="button"
                 >
                   Editar
                 </button>
@@ -234,10 +235,10 @@ function Compras() {
               </select>
 
               <ul className="list-group mt-4">
-                <li className="list-group-item">Val. Unitario: {
+                <li className="list-group-item">Valor Unitario: {
                   convertirMoneda(calcularPrecio({ material, dije, tipo, cantidad }))
                 }</li>
-                <li className="list-group-item">Val. Total: {
+                <li className="list-group-item">Valor Total de la Compra: {
                   convertirMoneda(calcularPrecio({ material, dije, tipo, cantidad }, true))
                 }</li>
               </ul>
@@ -247,11 +248,11 @@ function Compras() {
                     <>
                     <button
                         onClick={limpiar}
-                        className="btn btn-danger btn-block"
+                        className="botton"
                     >
                         Cancelar
                     </button>
-                    <button className="btn btn-warning btn-block">
+                    <button className="button">
                         Guardar Cambios
                     </button>
                     </>
