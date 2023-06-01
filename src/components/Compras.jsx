@@ -149,11 +149,11 @@ function Compras() {
 
   return (
     <div className="container mt-5">
-      <h5 className="text-center">Elija y combine su manilla con los materiales que desee</h5>
+      <h4 className="text-center">Elija y combine su manilla con los materiales que desee</h4>
       <hr />
 
       <div className="container-xs ">
-        <h5>Tipo de moneda con la que va a cancelar:</h5>
+        <h5 color="rgb(28, 110, 3)">Tipo de moneda con la que va a cancelar:</h5>
         <select value={moneda} onChange={(e) => setMoneda(e.target.value)} className="form-select">
           <option key="USD" value="USD">Dolar (USD)</option>
           <option key="COP" value="COP">Peso Colombiano</option>
