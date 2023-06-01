@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { db } from "../firebase.js";
+import { db } from "../firebase";
 import {
   collection,
   doc,
@@ -36,13 +36,13 @@ function Compras() {
             }))
           );
         });
-        await onSnapshot(collection(db, "lista"), (query) => {
+        await onSnapshot(collection(db, "catalogo"), (query) => {
           const data = query.docs.map((doc) => ({
             ...doc.data(),
             id: doc.id,
           }));
 
-          setlista(
+          setCatalogo(
             data.filter(({ id }) => id !== "master")
           );
 
@@ -59,14 +59,14 @@ function Compras() {
   }, []);
 
   const calcularPrecio = (producto, total) => {
-    const listaItem = lista.find(
+    const catalogoItem = catalogo.find(
       (i) =>
         i.material === producto.material &&
         i.dije === producto.dije &&
         i.tipo === producto.tipo
     );
 
-    const unitario = ((listaItem ?? {}).valor_usd ?? 0)
+    const unitario = ((catalogoItem ?? {}).valor_usd ?? 0)
 
     return total ? producto.cantidad * unitario : unitario;
   };
@@ -149,16 +149,12 @@ function Compras() {
 
   return (
     <div className="container mt-5">
-      <h1 className="text-center">Elija y combine a su gusto nuestros productos</h1>
+      <h2 className="text-center">Elija y combine su manilla deseada</h2>
       <hr />
 
       <div className="container-xs col-4 mb-4">
-        Moneda:
-        <select
-          value={moneda}
-          onChange={(e) => setMoneda(e.target.value)}
-          className="form-select"
-        >
+        Tipo de moneda con la que va a cancelar:
+        <select value={moneda} onChange={(e) => setMoneda(e.target.value)} className="form-select">
           <option key="USD" value="USD">Dolar (USD)</option>
           <option key="COP" value="COP">Peso Colombiano</option>
         </select>
@@ -166,7 +162,7 @@ function Compras() {
 
       <div className="row">
         <div className="col-8">
-          <h4 className="text-center">Listado de manillas</h4>
+          <h4 className="text-center">Listado de Productos</h4>
           <ul className="list-group">
             {listaProductos.map((producto) => (
               <li key={producto.id} className="list-group-item">
