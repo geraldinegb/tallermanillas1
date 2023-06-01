@@ -155,15 +155,15 @@ function Compras() {
       <div className="container-xs ">
         <h5 color="rgb(28, 110, 3)">Tipo de moneda con la que va a cancelar:</h5>
         <select value={moneda} onChange={(e) => setMoneda(e.target.value)} className="form-select">
-          <option key="USD" value="USD">Dolar (USD)</option>
-          <option key="COP" value="COP">Peso Colombiano</option>
+          <option key="USD" value="USD">Dólares (USD)</option>
+          <option key="COP" value="COP">Pesos Colombianos</option>
         </select>
         <br></br>
       </div>
 
       <div className="row">
         <div className="col-8">
-          <h5 className="text-center">Combinaciones Elegidas</h5>
+          <h5 className="text-center">Combinación(es) Elegidas</h5>
           <ul className="list-group">
             {listaProductos.map((producto) => (
               <li key={producto.id} className="list-group-item">
