@@ -163,7 +163,7 @@ function Compras() {
 
       <div className="row">
         <div className="col-8">
-          <h5 className="text-center">Listado de Productos</h5>
+          <h5 className="text-center">Combinaciones Elegidas</h5>
           <ul className="list-group">
             {listaProductos.map((producto) => (
               <li key={producto.id} className="list-group-item">
@@ -192,7 +192,7 @@ function Compras() {
           </ul>
         </div>
         <div className="col-4">
-          <h5 className="text-center">Agregar producto</h5>
+          <h5 className="text-center">Agregar al carrito</h5>
           {master && (
             <form onSubmit={guardarProducto}>
               <input
@@ -208,7 +208,7 @@ function Compras() {
                 onChange={(e) => setMaterial(e.target.value)}
                 className="form-select"
               >
-                <option disabled value="">Seleccione un material</option>
+                <option disabled value="">Seleccione el material</option>
                 {master.materiales.map((material) => (
                   <option key={material}>{material}</option>
                 ))}
@@ -257,7 +257,7 @@ function Compras() {
                     </button>
                     </>
                 ) : (
-                    <button className="button">Agregar</button>
+                    <button className="button">Agregar al carrito</button>
                 )}
               </div>
             </form>
