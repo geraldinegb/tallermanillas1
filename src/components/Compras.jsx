@@ -149,11 +149,11 @@ function Compras() {
 
   return (
     <div className="container mt-5">
-      <h2 className="text-center">Elija y combine su manilla deseada</h2>
+      <h4 className="text-center">Elija y combine su manilla con los materiales que desee</h4>
       <hr />
 
       <div className="container-xs col-4 mb-4">
-        Tipo de moneda con la que va a cancelar:
+        <h5>Tipo de moneda con la que va a cancelar:</h5>
         <select value={moneda} onChange={(e) => setMoneda(e.target.value)} className="form-select">
           <option key="USD" value="USD">Dolar (USD)</option>
           <option key="COP" value="COP">Peso Colombiano</option>
@@ -162,7 +162,7 @@ function Compras() {
 
       <div className="row">
         <div className="col-8">
-          <h4 className="text-center">Listado de Productos</h4>
+          <h5 className="text-center">Listado de Productos</h5>
           <ul className="list-group">
             {listaProductos.map((producto) => (
               <li key={producto.id} className="list-group-item">
@@ -186,17 +186,17 @@ function Compras() {
               </li>
             ))}
             <li className="list-group-item">
-                <h4 className="text-center">Total de la Compra: {convertirMoneda(calcularTotalCompra())}</h4>
+                <h5 className="text-center">Total de la Compra: {convertirMoneda(calcularTotalCompra())}</h5>
             </li>
           </ul>
         </div>
         <div className="col-4">
-          <h4 className="text-center">Agregar producto</h4>
+          <h5 className="text-center">Agregar producto</h5>
           {master && (
             <form onSubmit={guardarProducto}>
               <input
                 value={cantidad}
-                min="1"
+                min="seleccione el producto"
                 onChange={(e) => setCantidad(e.target.value)}
                 type="number"
                 className="form-control mb-4"
@@ -256,7 +256,7 @@ function Compras() {
                     </button>
                     </>
                 ) : (
-                    <button className="btn btn-primary btn-block">Agregar</button>
+                    <button className="button">Agregar</button>
                 )}
               </div>
             </form>

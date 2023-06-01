@@ -4,7 +4,7 @@ function App() {
   return (
     <>
       <header>
-        <h2 className='text-center'>Bienvenido a Manillas XYZ</h2>
+        <h3 className='text-center'>Bienvenido a Manillas XYZ</h3>
       
       </header>
       <Compras />

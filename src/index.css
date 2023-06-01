@@ -29,11 +29,14 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: rgb(156, 248, 137);
 }
 
-h1 {
+h3 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: rgb(28, 110, 3);
+
 }
 
 button {
@@ -48,7 +51,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #00ba0f;
 }
 button:focus,
 button:focus-visible {
@@ -64,6 +67,7 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #00ba0f;
+    color: white;
   }
 }
